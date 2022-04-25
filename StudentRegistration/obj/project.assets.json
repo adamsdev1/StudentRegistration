@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tadam\\source\\repos\\StudentRegistration\\StudentRegistration\\StudentRegistration\\StudentRegistration.csproj",
+      "projectUniqueName": "C:\\Users\\tadam\\source\\repos\\StudentRegistration\\StudentRegistration\\StudentRegistration.csproj",
       "projectName": "StudentRegistration",
-      "projectPath": "C:\\Users\\tadam\\source\\repos\\StudentRegistration\\StudentRegistration\\StudentRegistration\\StudentRegistration.csproj",
+      "projectPath": "C:\\Users\\tadam\\source\\repos\\StudentRegistration\\StudentRegistration\\StudentRegistration.csproj",
       "packagesPath": "C:\\Users\\tadam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tadam\\source\\repos\\StudentRegistration\\StudentRegistration\\StudentRegistration\\obj\\",
+      "outputPath": "C:\\Users\\tadam\\source\\repos\\StudentRegistration\\StudentRegistration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
