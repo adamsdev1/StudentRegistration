@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StudentRegistration.Models;
+using StudentRegistration.Services.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +27,12 @@ namespace StudentRegistration
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
+            services.AddDbContext<StudentRegistrationContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("StudentRegistrationConnection")));
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,11 +55,13 @@ namespace StudentRegistration
 
             app.UseAuthorization();
 
+            AppConfig.SetConfig(Configuration);
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Students}/{action=Index}/{id?}");
             });
         }
     }
